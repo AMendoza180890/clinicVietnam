@@ -1,0 +1,321 @@
+---
+import { languages } from "../i18n/translations.js";
+const { lang, t } = Astro.props;
+
+const navLinks = [
+  { key: 'nav.home', href: `/${lang}/` },
+  { key: 'nav.services', href: `/${lang}/services` },
+  { key: 'nav.doctors', href: `/${lang}/doctors` },
+  { key: 'nav.contact', href: `/${lang}/contact` },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<!-- NAVBAR -->
+<nav id="navbar">
+    <div class="container">
+      <div class="nav-inner">
+        <!-- Logo -->
+        <a href={`/${lang}/`} class="nav-logo">
+          <div class="logo-icon">
+            <img src="/logo.jpg" alt="Phong Kham SC" />
+            <!-- <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M19 3H5C3.9 3 3 3.9 3 5v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l7.59-7.59L21 8l-9 9z"/>
+            </svg> -->
+          </div>
+          <div class="logo-text">Phong<span>Kham</span></div>
+        </a>
+  
+        <!-- Nav Links -->
+        <ul class="nav-links" id="navLinks">
+          {navLinks.map(link => (
+            <li>
+              <a
+                href={link.href}
+                class={currentPath === link.href || currentPath === link.href + '/' ? 'active' : ''}
+              >
+                {t(link.key)}
+              </a>
+            </li>
+          ))}
+        </ul>
+  
+        <!-- Right side -->
+        <div class="nav-right">
+          <!-- Language Switcher -->
+          <div class="lang-switcher">
+            <button class="lang-btn" aria-label="Language">
+              <span>{languages[lang].flag}</span>
+              <span>{languages[lang].name}</span>
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M7 10l5 5 5-5z"/>
+              </svg>
+            </button>
+            <div class="lang-dropdown">
+              {Object.entries(languages).map(([code, langData]) => {
+                const newPath = currentPath.replace(`/${lang}`, `/${code}`);
+                return (
+                  <a href={newPath} class={`lang-option ${lang === code ? 'active' : ''}`}>
+                    <span>{langData.flag}</span>
+                    <span>{langData.name}</span>
+                  </a>
+                );
+              })}
+            </div>
+          </div>
+  
+          <!-- CTA -->
+          <a href={`/${lang}/contact`} class="btn btn-primary nav-cta">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"/>
+            </svg>
+            {t('nav.contact')}
+          </a>
+  
+          <!-- Hamburger -->
+          <button class="hamburger" id="hamburger" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <style>
+    #navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      padding: 16px 0;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      transition: all 0.3s ease;
+    }
+
+    #navbar.scrolled {
+      padding: 10px 0;
+      box-shadow: var(--shadow);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 800;
+      font-size: 1.35rem;
+      color: var(--primary);
+      flex-shrink: 0;
+    }
+
+    .logo-icon {
+      width: 42px;
+      height: 42px;
+      background: linear-gradient(135deg, var(--primary), var(--primary-light));
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo-icon svg {
+      width: 24px;
+      height: 24px;
+      fill: white;
+    }
+
+    .logo-text span {
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 600;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      padding: 8px 14px;
+      border-radius: 8px;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--primary);
+      background: rgba(10,110,110,0.08);
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-shrink: 0;
+    }
+
+    .lang-switcher {
+      position: relative;
+    }
+
+    .lang-btn {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border: 2px solid var(--border);
+      border-radius: 8px;
+      background: white;
+      cursor: pointer;
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: var(--text);
+      transition: all 0.2s ease;
+    }
+
+    .lang-btn:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    .lang-btn svg {
+      width: 14px;
+      height: 14px;
+      transition: transform 0.2s ease;
+    }
+
+    .lang-dropdown {
+      position: absolute;
+      top: calc(100% + 8px);
+      right: 0;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-8px);
+      transition: all 0.2s ease;
+      min-width: 160px;
+    }
+
+    .lang-switcher:hover .lang-dropdown,
+    .lang-switcher:focus-within .lang-dropdown {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .lang-switcher:hover .lang-btn svg {
+      transform: rotate(180deg);
+    }
+
+    .lang-option {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 11px 16px;
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.15s ease;
+      border: none;
+      background: none;
+      width: 100%;
+      text-align: left;
+    }
+
+    .lang-option:hover {
+      background: rgba(10,110,110,0.06);
+      color: var(--primary);
+    }
+
+    .lang-option.active {
+      color: var(--primary);
+      background: rgba(10,110,110,0.08);
+    }
+
+    .nav-cta { display: none; }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 8px;
+      background: none;
+      border: none;
+    }
+
+    .hamburger span {
+      width: 24px;
+      height: 2px;
+      background: var(--text);
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    @media (min-width: 1024px) {
+      .nav-cta { display: flex; }
+    }
+
+    @media (max-width: 1023px) {
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        padding: 20px;
+        border-bottom: 1px solid var(--border);
+        box-shadow: var(--shadow);
+      }
+
+      .nav-links.open { display: flex; }
+
+      .hamburger { display: flex; }
+    }
+  </style>
+
+  <script>
+    // Navbar scroll effect
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 20) {
+        navbar?.classList.add('scrolled');
+      } else {
+        navbar?.classList.remove('scrolled');
+      }
+    });
+  
+    // Hamburger menu
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    hamburger?.addEventListener('click', () => {
+      navLinks?.classList.toggle('open');
+    });
+  </script>

@@ -1,0 +1,660 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { useTranslations } from '../i18n/translations.js';
+
+const { lang = 'en' } = Astro.props;
+const t = useTranslations(lang);
+
+const doctors = [
+  { name: 'Dr. Sarah Chen', specialty: t('services.cardiology.title'), img: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=300&h=300&fit=crop' },
+  { name: 'Dr. James Park', specialty: t('services.neurology.title'), img: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=300&h=300&fit=crop' },
+  { name: 'Dr. Linh Nguyen', specialty: t('services.pediatrics.title'), img: 'https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=300&h=300&fit=crop' },
+];
+
+const testimonials = [
+  { name: 'Nguyen Van An', text: lang === 'vi' ? 'Dịch vụ tuyệt vời, bác sĩ rất tận tâm và chuyên nghiệp.' : lang === 'ko' ? '훌륭한 서비스, 의사들이 매우 헌신적이고 전문적입니다.' : 'Excellent service, the doctors are very dedicated and professional.', rating: 5 },
+  { name: 'Kim Ji Woo', text: lang === 'vi' ? 'Phòng khám hiện đại, sạch sẽ và đội ngũ y tế tuyệt vời.' : lang === 'ko' ? '현대적이고 깨끗한 클리닉, 훌륭한 의료팀.' : 'Modern, clean clinic with an amazing medical team.', rating: 5 },
+  { name: 'Michael Torres', text: lang === 'vi' ? 'Tôi rất hài lòng với chất lượng dịch vụ tại đây.' : lang === 'ko' ? '이곳의 서비스 품질에 매우 만족합니다.' : 'I am very satisfied with the quality of service here.', rating: 5 },
+];
+
+const services = [
+  { icon: '🫀', key: 'cardiology', color: '#FF6B6B' },
+  { icon: '🧠', key: 'neurology', color: '#4ECDC4' },
+  { icon: '👶', key: 'pediatrics', color: '#45B7D1' },
+  { icon: '🦴', key: 'orthopedics', color: '#96CEB4' },
+];
+---
+
+<Layout lang={lang} title={t('nav.home')}>
+
+  <!-- HERO SECTION -->
+  <section class="hero-section">
+    <div class="hero-bg"></div>
+    <div class="container">
+      <div class="hero-inner">
+        <div class="hero-content">
+          <div class="hero-tag">
+            <span class="pulse-dot"></span>
+            {t('home.hero.subtitle')}
+          </div>
+          <h1 class="hero-title">{t('home.hero.title')}</h1>
+          <p class="hero-desc">{t('home.hero.desc')}</p>
+          <div class="hero-actions">
+            <a href={`/${lang}/contact`} class="btn btn-primary btn-lg">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"/></svg>
+              {t('home.hero.cta')}
+            </a>
+            <a href={`/${lang}/services`} class="btn btn-ghost-white btn-lg">
+              {t('home.hero.cta2')}
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-card-main">
+            <div class="hero-img-wrap">
+              <img src="https://images.unsplash.com/photo-1551190822-a9333d879b1f?w=500&h=600&fit=crop" alt="Doctor" />
+              <div class="hero-badge badge-1">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="#0A6E6E"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                <span>ISO Certified</span>
+              </div>
+              <div class="hero-badge badge-2">
+                <strong>20+</strong>
+                <span>Years</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS SECTION -->
+  <section class="stats-section section">
+    <div class="container">
+      <div class="stats-grid">
+        {[
+          { number: '50,000+', label: t('home.stats.patients'), icon: '👥' },
+          { number: '80+', label: t('home.stats.doctors'), icon: '⚕️' },
+          { number: '20+', label: t('home.stats.years'), icon: '🏆' },
+          { number: '15+', label: t('home.stats.awards'), icon: '🥇' },
+        ].map(stat => (
+          <div class="stat-item">
+            <div class="stat-icon">{stat.icon}</div>
+            <div class="stat-number">{stat.number}</div>
+            <div class="stat-label">{stat.label}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section class="section about-section">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-img-col">
+          <div class="about-img-wrap">
+            <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=600&h=500&fit=crop" alt="Clinic" />
+            <div class="about-img-card">
+              <div class="aic-icon">🏥</div>
+              <div>
+                <strong>MediCare Clinic</strong>
+                <span>Since 2004</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="about-content">
+          <span class="tag">{t('home.about.tag')}</span>
+          <h2 class="section-title">{t('home.about.title')}</h2>
+          <p class="about-p">{t('home.about.p1')}</p>
+          <p class="about-p">{t('home.about.p2')}</p>
+          <div class="about-features">
+            {[t('home.about.feature1'), t('home.about.feature2'), t('home.about.feature3')].map(f => (
+              <div class="about-feature">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="#0A6E6E"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                {f}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES SECTION -->
+  <section class="section services-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="tag">{t('home.services.tag')}</span>
+        <h2 class="section-title">{t('home.services.title')}</h2>
+      </div>
+      <div class="grid-4 services-cards">
+        {services.map(svc => (
+          <a href={`/${lang}/services`} class="service-card card">
+            <div class="svc-icon-wrap" style={`background: ${svc.color}18;`}>
+              <span class="svc-icon">{svc.icon}</span>
+            </div>
+            <h3 class="svc-title">{t(`home.services.${svc.key}`)}</h3>
+            <p class="svc-desc">{t(`home.services.${svc.key}.desc`)}</p>
+            <div class="svc-link">
+              Learn more
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- DOCTORS SECTION -->
+  <section class="section doctors-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="tag">{t('home.team.tag')}</span>
+        <h2 class="section-title">{t('home.team.title')}</h2>
+      </div>
+      <div class="grid-3 doctors-cards">
+        {doctors.map(doc => (
+          <div class="doctor-card card">
+            <div class="doc-img-wrap">
+              <img src={doc.img} alt={doc.name} />
+              <div class="doc-specialty">{doc.specialty}</div>
+            </div>
+            <div class="doc-info">
+              <h3 class="doc-name">{doc.name}</h3>
+              <a href={`/${lang}/contact`} class="btn btn-outline btn-sm">{t('home.hero.cta')}</a>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div class="text-center mt-32">
+        <a href={`/${lang}/doctors`} class="btn btn-primary">
+          {t('doctors.hero.title')}
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS SECTION -->
+  <section class="section testimonials-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="tag">{t('home.testimonials.tag')}</span>
+        <h2 class="section-title">{t('home.testimonials.title')}</h2>
+      </div>
+      <div class="grid-3 testimonials-grid">
+        {testimonials.map(t2 => (
+          <div class="testimonial-card card">
+            <div class="testi-stars">{'⭐'.repeat(t2.rating)}</div>
+            <p class="testi-text">"{t2.text}"</p>
+            <div class="testi-author">
+              <div class="testi-avatar">{t2.name[0]}</div>
+              <span class="testi-name">{t2.name}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
+  <section class="section cta-section">
+    <div class="container">
+      <div class="cta-box">
+        <div class="cta-content">
+          <h2 class="cta-title">{t('home.cta.title')}</h2>
+          <p class="cta-desc">{t('home.cta.desc')}</p>
+        </div>
+        <a href={`/${lang}/contact`} class="btn btn-accent btn-lg">{t('home.cta.btn')}</a>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  /* HERO */
+  .hero-section {
+    position: relative;
+    min-height: 88vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: linear-gradient(135deg, #f0f9f9 0%, #e8f4f8 50%, #f0f9f9 100%);
+    padding: 80px 0;
+    margin-bottom: var(--section-gap);
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 80% 80% at 70% 50%, rgba(10,110,110,0.07) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+  }
+
+  .hero-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--primary);
+    background: rgba(10,110,110,0.08);
+    padding: 8px 16px;
+    border-radius: 100px;
+    margin-bottom: 20px;
+  }
+
+  .pulse-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--primary);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.4); }
+  }
+
+  .hero-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    color: var(--text);
+  }
+
+  .hero-desc {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    max-width: 480px;
+    line-height: 1.7;
+    margin-bottom: 36px;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .btn-lg { padding: 16px 32px; font-size: 1rem; }
+  .btn-sm { padding: 8px 18px; font-size: 0.8rem; }
+
+  .btn-ghost-white {
+    background: transparent;
+    color: var(--primary);
+    border: 2px solid rgba(10,110,110,0.25);
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 16px 32px;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+  }
+
+  .btn-ghost-white:hover {
+    border-color: var(--primary);
+    background: rgba(10,110,110,0.06);
+  }
+
+  .hero-visual { position: relative; }
+
+  .hero-img-wrap {
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+  }
+
+  .hero-img-wrap img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+  }
+
+  .hero-badge {
+    position: absolute;
+    background: white;
+    border-radius: 12px;
+    padding: 12px 16px;
+    box-shadow: var(--shadow-lg);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: 0.85rem;
+  }
+
+  .badge-1 { bottom: 24px; left: -20px; }
+  .badge-2 {
+    top: 24px;
+    right: -20px;
+    flex-direction: column;
+    gap: 2px;
+    text-align: center;
+  }
+
+  .badge-2 strong { font-size: 1.5rem; color: var(--primary); font-weight: 800; }
+  .badge-2 span { font-size: 0.75rem; color: var(--text-muted); }
+
+  /* STATS */
+  .stats-section { background: var(--primary); }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+  }
+
+  .stat-item {
+    text-align: center;
+    padding: 48px 24px;
+    border-right: 1px solid rgba(255,255,255,0.15);
+  }
+
+  .stat-item:last-child { border-right: none; }
+
+  .stat-icon { font-size: 2rem; margin-bottom: 12px; }
+
+  .stat-number {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 800;
+    font-size: 2.5rem;
+    color: white;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .stat-label {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.65);
+    font-weight: 500;
+  }
+
+  /* ABOUT */
+  .about-section { background: white; }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+  }
+
+  .about-img-wrap {
+    position: relative;
+    border-radius: 20px;
+    overflow: visible;
+  }
+
+  .about-img-wrap img {
+    width: 100%;
+    height: 460px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: var(--shadow-lg);
+  }
+
+  .about-img-card {
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    background: white;
+    padding: 16px 20px;
+    border-radius: 14px;
+    box-shadow: var(--shadow-lg);
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .aic-icon { font-size: 2rem; }
+
+  .about-img-card strong {
+    display: block;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--text);
+  }
+
+  .about-img-card span {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  .about-p {
+    color: var(--text-muted);
+    line-height: 1.75;
+    margin-bottom: 16px;
+  }
+
+  .about-features {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 24px;
+  }
+
+  .about-feature {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: var(--text);
+  }
+
+  /* SERVICES */
+  .services-section { background: var(--bg); }
+
+  .section-header {
+    margin-bottom: 48px;
+  }
+
+  .section-header.text-center { text-align: center; }
+  .section-header.text-center .section-desc { margin: 0 auto; }
+
+  .service-card {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .svc-icon-wrap {
+    width: 60px;
+    height: 60px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 4px;
+  }
+
+  .svc-icon { font-size: 1.75rem; }
+
+  .svc-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text);
+  }
+
+  .svc-desc {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    line-height: 1.65;
+    flex: 1;
+  }
+
+  .svc-link {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size: 0.8rem;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: 8px;
+  }
+
+  /* DOCTORS */
+  .doctors-section { background: white; }
+
+  .doctor-card {
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .doc-img-wrap {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .doc-img-wrap img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+
+  .doctor-card:hover .doc-img-wrap img { transform: scale(1.05); }
+
+  .doc-specialty {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(10,110,110,0.9));
+    color: white;
+    padding: 24px 20px 12px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .doc-info {
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .doc-name {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text);
+  }
+
+  /* TESTIMONIALS */
+  .testimonials-section { background: var(--bg); }
+
+  .testimonial-card {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .testi-stars { font-size: 1rem; }
+
+  .testi-text {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+    flex: 1;
+    font-style: italic;
+  }
+
+  .testi-author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .testi-avatar {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+  }
+
+  .testi-name {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--text);
+  }
+
+  /* CTA */
+  .cta-section { background: var(--primary); }
+
+  .cta-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+
+  .cta-title {
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    color: white;
+    margin-bottom: 8px;
+  }
+
+  .cta-desc {
+    color: rgba(255,255,255,0.7);
+    font-size: 1rem;
+  }
+
+  .text-center { text-align: center; }
+  .mt-32 { margin-top: 32px; }
+
+  @media (max-width: 1024px) {
+    .hero-inner { grid-template-columns: 1fr; }
+    .hero-visual { display: none; }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    .stat-item:nth-child(2) { border-right: none; }
+    .about-grid { grid-template-columns: 1fr; }
+    .about-img-col { display: none; }
+  }
+
+  @media (max-width: 640px) {
+    .stats-grid { grid-template-columns: 1fr 1fr; }
+    .hero-actions { flex-direction: column; }
+    .cta-box { flex-direction: column; text-align: center; }
+  }
+</style>
