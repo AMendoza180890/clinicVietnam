@@ -1,0 +1,14 @@
+---
+import Flag from './Flag.astro';
+const {tag, title, description} = Astro.props;
+---
+<section class="page-hero section">
+    <div class="hero-pattern"></div>
+    <div class="container">
+      <div class="page-hero-content">
+        <Flag title={tag}/>
+        <h1 class="section-title">{title}</h1>
+        <p class="section-desc">{description}</p>
+      </div>
+    </div>
+  </section>

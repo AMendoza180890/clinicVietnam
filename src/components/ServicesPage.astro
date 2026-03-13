@@ -1,6 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { useTranslations } from '../i18n/translations.js';
+import Hero from '../components/Hero.astro';
+import Flag from '../components/Flag.astro';
 
 const { lang = 'en' } = Astro.props;
 const t = useTranslations(lang);
@@ -25,22 +27,13 @@ const processSteps = [
 <Layout lang={lang} title={t('nav.services')}>
 
   <!-- HERO -->
-  <section class="page-hero services-hero section">
-    <div class="hero-pattern"></div>
-    <div class="container">
-      <div class="page-hero-content">
-        <span class="tag">{t('nav.services')}</span>
-        <h1 class="section-title hero-title">{t('services.hero.title')}</h1>
-        <p class="section-desc">{t('services.hero.desc')}</p>
-      </div>
-    </div>
-  </section>
+  <Hero tag={t('nav.services')} title={t('services.hero.title')} description={t('services.hero.desc')} />
 
   <!-- SERVICES LIST -->
   <section class="section services-list-section">
     <div class="container">
       <div class="section-header">
-        <span class="tag">{t('services.list.title')}</span>
+        <Flag title={t('services.list.title')}/>
       </div>
       <div class="services-grid">
         {services.map(svc => (
@@ -67,7 +60,7 @@ const processSteps = [
   <section class="section process-section">
     <div class="container">
       <div class="section-header text-center">
-        <span class="tag">{t('services.process.title')}</span>
+        <Flag title={t('services.process.title')} />
         <h2 class="section-title">{t('services.process.title')}</h2>
       </div>
       <div class="process-grid">
@@ -89,7 +82,7 @@ const processSteps = [
     <div class="container">
       <div class="why-grid">
         <div class="why-content">
-          <span class="tag">Why MediCare</span>
+          <Flag title="Why MediCare" />
           <h2 class="section-title">
             {lang === 'vi' ? 'Tại Sao Chọn Chúng Tôi?' : lang === 'ko' ? '왜 우리를 선택해야 하나요?' : 'Why Choose MediCare?'}
           </h2>

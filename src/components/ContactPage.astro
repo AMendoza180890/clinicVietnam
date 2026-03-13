@@ -1,6 +1,8 @@
 ---
- import Layout from '../layouts/Layout.astro';
+import Layout from '../layouts/Layout.astro';
 import { useTranslations } from '../i18n/translations.js';
+import Hero from '../components/Hero.astro';
+import Flag from '../components/Flag.astro';
 
 const { lang = import.meta.env.LANG } = Astro.props;
 const Email = import.meta.env.EMAIL;
@@ -10,7 +12,8 @@ const t = useTranslations(lang);
 <Layout lang={lang} title={t('nav.contact')}>
 
   <!-- HERO -->
-  <section class="page-hero section">
+  <Hero tag={t('nav.contact')} title={t('contact.hero.title')} description={t('contact.hero.desc')} />
+  <!-- <section class="page-hero section">
     <div class="hero-pattern"></div>
     <div class="container">
       <div class="page-hero-content">
@@ -19,7 +22,7 @@ const t = useTranslations(lang);
         <p class="section-desc">{t('contact.hero.desc')}</p>
       </div>
     </div>
-  </section>
+  </section> -->
 
   <!-- CONTACT MAIN SECTION -->
   <section class="section contact-main-section">
@@ -100,7 +103,7 @@ const t = useTranslations(lang);
 
             <!-- Phone -->
             <div class="info-card">
-              <div class="info-icon" style="background: rgba(69,183,209,0.12);">
+              <div class="info-icon" style="background: rgba(88, 166, 137, 0.122);">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="#45B7D1"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
               </div>
               <div class="info-text">
@@ -111,7 +114,7 @@ const t = useTranslations(lang);
 
             <!-- Email -->
             <div class="info-card">
-              <div class="info-icon" style="background: rgba(232,160,32,0.12);">
+              <div class="info-icon" style="background: rgba(88, 166, 137, 0.122);">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="#E8A020"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
               </div>
               <div class="info-text">
@@ -122,7 +125,7 @@ const t = useTranslations(lang);
 
             <!-- Hours -->
             <div class="info-card">
-              <div class="info-icon" style="background: rgba(150,206,180,0.2);">
+              <div class="info-icon" style="background: rgba(88, 166, 137, 0.122);">
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="#6AAB8A"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>
               </div>
               <div class="info-text">
@@ -153,7 +156,7 @@ const t = useTranslations(lang);
   <section class="section map-section">
     <div class="container">
       <div class="section-header">
-        <span class="tag">{t('contact.map.title')}</span>
+        <Flag title={t('contact.map.title')}/>
         <h2 class="section-title">{t('contact.map.title')}</h2>
       </div>
       <div class="map-wrap">
@@ -415,7 +418,6 @@ const t = useTranslations(lang);
   form?.addEventListener('submit', (e) => {
     e.preventDefault();
     successMsg?.classList.add('visible');
-    form.reset();
     setTimeout(() => {
       successMsg?.classList.remove('visible');
     }, 5000);

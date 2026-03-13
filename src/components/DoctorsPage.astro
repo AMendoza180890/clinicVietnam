@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { useTranslations } from '../i18n/translations.js';
+import Hero from '../components/Hero.astro';
 
 const { lang = 'vi' } = Astro.props;
 const t = useTranslations(lang);
@@ -72,16 +73,7 @@ const doctors = [
 <Layout lang={lang} title={t('nav.doctors')}>
 
   <!-- HERO -->
-  <section class="page-hero section">
-    <div class="hero-pattern"></div>
-    <div class="container">
-      <div class="page-hero-content">
-        <span class="tag">{t('nav.doctors')}</span>
-        <h1 class="section-title">{t('doctors.hero.title')}</h1>
-        <p class="section-desc">{t('doctors.hero.desc')}</p>
-      </div>
-    </div>
-  </section>
+   <Hero tag={t('nav.doctors')} title={t('doctors.hero.title')} description={t('doctors.hero.desc')} />
 
   <!-- DOCTORS GRID -->
   <section class="section doctors-main-section">
