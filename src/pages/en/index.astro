@@ -1,4 +1,5 @@
 ---
 import HomePage from '../../components/HomePage.astro';
+const language = import.meta.env.ENG;
 ---
-<HomePage lang="en" title="Home" />
+<HomePage lang=`${language}` title="Home" />

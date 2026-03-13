@@ -1,4 +1,5 @@
 ---
 import ServicesPage from '../../components/ServicesPage.astro';
+const language = import.meta.env.KO;
 ---
-<ServicesPage lang="vi" title="Services" />
+<ServicesPage lang=`${language}` title="Services" />

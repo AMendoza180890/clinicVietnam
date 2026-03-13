@@ -1,4 +1,5 @@
 ---
 import ContactPage from '../../components/ContactPage.astro';
+const language = import.meta.env.KO;
 ---
-<ContactPage lang="ko" title="Contact" />
+<ContactPage lang=`${language}` title="Contact" />

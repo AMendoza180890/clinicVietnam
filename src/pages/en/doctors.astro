@@ -1,4 +1,5 @@
 ---
 import DoctorsPage from '../../components/DoctorsPage.astro';
+const language = import.meta.env.ENG;
 ---
-<DoctorsPage lang="en" title="Doctors" />
+<DoctorsPage lang=`${language}` title="Doctors" />

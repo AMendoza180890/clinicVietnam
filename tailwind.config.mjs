@@ -15,7 +15,7 @@ export default {
         },
       },
       fontFamily: {
-        display: ['Anton', 'sans-serif'],
+        display: ['Open Sans', 'sans-serif'],
         body: ['Open Sans', 'sans-serif'],
       },
     },
