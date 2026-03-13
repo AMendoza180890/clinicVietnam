@@ -19,7 +19,7 @@ const t = useTranslations(lang);
               ></path></svg
             > -->
           </div>
-          Phong<span>Kham</span>
+          <div class="logo-text">Phong <span>Kham</span></div>
         </div>
         <p class="footer-tagline">{t("footer.tagline")}</p>
         <div class="social-links">
@@ -65,6 +65,7 @@ const t = useTranslations(lang);
           <li><a href={`/${lang}/`}>{t("nav.home")}</a></li>
           <li><a href={`/${lang}/services`}>{t("nav.services")}</a></li>
           <li><a href={`/${lang}/doctors`}>{t("nav.doctors")}</a></li>
+          <li><a href={`/${lang}/dental`}>{t("nav.dental")}</a></li>
           <li><a href={`/${lang}/contact`}>{t("nav.contact")}</a></li>
         </ul>
       </div>
@@ -105,9 +106,28 @@ const t = useTranslations(lang);
           </div>
           <div class="footer-contact-info">
             <p>{t("contact.info.address")}</p>
-            <span>{t("footer.address")}</span>
+            <a href="https://maps.app.goo.gl/9kR6GDaaiAzgZBQ76" target="_blank">
+              <span>{t("footer.address")}</span>
+            </a>
           </div>
         </div>
+
+        <div class="footer-contact-item">
+          <div class="footer-contact-icon">
+            <svg viewBox="0 0 24 24"
+              ><path
+                d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
+              ></path></svg
+            >
+          </div>
+          <div class="footer-contact-info">
+            <p>{t("contact.info.addressDental")}</p>
+            <a href="https://maps.app.goo.gl/1GaqyckqXwXDLzxb7" target="_blank">
+              <span>{t("footer.addressDental")}</span>
+            </a>
+          </div>
+        </div>
+
 
         <div class="footer-contact-item">
           <div class="footer-contact-icon">
@@ -119,7 +139,9 @@ const t = useTranslations(lang);
           </div>
           <div class="footer-contact-info">
             <p>{t("contact.info.phone")}</p>
-            <span>{t("footer.phone")}</span>
+            <a href=`tel:+${t("footer.phone")}`>
+              <span>{t("footer.phone")}</span>
+            </a>
           </div>
         </div>
 
@@ -133,7 +155,9 @@ const t = useTranslations(lang);
           </div>
           <div class="footer-contact-info">
             <p>{t("contact.info.email")}</p>
-            <span>info@phongkham.com</span>
+            <a href="mailto:info@phongkham.com">
+              <span>info@phongkham.com</span>
+            </a>
           </div>
         </div>
       </div>

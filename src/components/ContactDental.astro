@@ -9,20 +9,10 @@ const Email = import.meta.env.EMAIL;
 const t = useTranslations(lang);
 ---
 
-<Layout lang={lang} title={t('nav.contact')}>
+<Layout lang={lang} title={t('nav.dental')}>
 
   <!-- HERO -->
-  <Hero tag={t('nav.contact')} title={t('contact.hero.title')} description={t('contact.hero.desc')} />
-  <!-- <section class="page-hero section">
-    <div class="hero-pattern"></div>
-    <div class="container">
-      <div class="page-hero-content">
-        <span class="tag">{t('nav.contact')}</span>
-        <h1 class="section-title">{t('contact.hero.title')}</h1>
-        <p class="section-desc">{t('contact.hero.desc')}</p>
-      </div>
-    </div>
-  </section> -->
+  <Hero tag={t('nav.dental')} title={t('dental.hero.title')} description={t('dental.hero.desc')} />
 
   <!-- CONTACT MAIN SECTION -->
   <section class="section contact-main-section">
@@ -32,7 +22,7 @@ const t = useTranslations(lang);
         <!-- FORM -->
         <div class="contact-form-wrap">
           <div class="form-header">
-            <h2 class="form-title">{t('contact.form.title')}</h2>
+            <h2 class="form-title">{t('dental.form.title')}</h2>
             <p class="form-subtitle">
               {lang === 'vi' ? 'Chúng tôi sẽ phản hồi trong vòng 24 giờ.' : lang === 'ko' ? '24시간 내에 답변 드리겠습니다.' : 'We will respond within 24 hours.'}
             </p>
@@ -41,42 +31,42 @@ const t = useTranslations(lang);
           <form class="contact-form" id="contactForm" novalidate>
             <div class="form-row">
               <div class="form-group">
-                <label for="name">{t('contact.form.name')}</label>
+                <label for="name">{t('dental.form.name')}</label>
                 <input type="text" id="name" name="name" placeholder={lang === 'vi' ? 'Nguyễn Văn A' : lang === 'ko' ? '홍길동' : 'John Smith'} required />
               </div>
               <div class="form-group">
-                <label for="email">{t('contact.form.email')}</label>
+                <label for="email">{t('dental.form.email')}</label>
                 <input type="email" id="email" name="email" placeholder="example@email.com" required />
               </div>
             </div>
 
             <div class="form-row">
               <div class="form-group">
-                <label for="phone">{t('contact.form.phone')}</label>
+                <label for="phone">{t('dental.form.phone')}</label>
                 <input type="tel" id="phone" name="phone" placeholder="+84 xxx xxx xxxx" />
               </div>
               <div class="form-group">
-                <label for="service">{t('contact.form.service')}</label>
+                <label for="service">{t('dental.form.service')}</label>
                 <select id="service" name="service">
-                  <option value="">{t('contact.form.service')}</option>
-                  <option value="cardiology">{t('services.cardiology.title')}</option>
-                  <option value="neurology">{t('services.neurology.title')}</option>
-                  <option value="pediatrics">{t('services.pediatrics.title')}</option>
-                  <option value="orthopedics">{t('services.orthopedics.title')}</option>
-                  <option value="dermatology">{t('services.dermatology.title')}</option>
-                  <option value="oncology">{t('services.oncology.title')}</option>
+                  <option value="">{t('dental.form.service')}</option>
+                  <option value="cardiology">{t('dental.cardiology.title')}</option>
+                  <option value="neurology">{t('dental.neurology.title')}</option>
+                  <option value="pediatrics">{t('dental.pediatrics.title')}</option>
+                  <option value="orthopedics">{t('dental.orthopedics.title')}</option>
+                  <option value="dermatology">{t('dental.dermatology.title')}</option>
+                  <option value="oncology">{t('dental.oncology.title')}</option>
                 </select>
               </div>
             </div>
 
             <div class="form-group">
-              <label for="message">{t('contact.form.message')}</label>
+              <label for="message">{t('dental.form.message')}</label>
               <textarea id="message" name="message" rows="5" placeholder={lang === 'vi' ? 'Mô tả tình trạng hoặc câu hỏi của bạn...' : lang === 'ko' ? '상태나 질문을 설명해 주세요...' : 'Describe your condition or question...'}></textarea>
             </div>
 
             <button type="submit" class="btn btn-primary btn-lg submit-btn">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
-              {t('contact.form.submit')}
+              {t('dental.form.submit')}
             </button>
 
             <div class="form-success" id="formSuccess">
@@ -87,7 +77,7 @@ const t = useTranslations(lang);
 
         <!-- INFO -->
         <div class="contact-info-col">
-          <h2 class="info-title">{t('contact.info.title')}</h2>
+          <h2 class="info-title">{t('dental.info.title')}</h2>
 
           <div class="info-cards">
             <!-- Address -->
@@ -107,7 +97,7 @@ const t = useTranslations(lang);
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="#45B7D1"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
               </div>
               <div class="info-text">
-                <span class="info-label">{t('contact.info.phone')}</span>
+                <span class="info-label">{t('dental.info.phone')}</span>
                 <p class="info-value">{t('footer.phone')}</p>
               </div>
             </div>
@@ -118,7 +108,7 @@ const t = useTranslations(lang);
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="#E8A020"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
               </div>
               <div class="info-text">
-                <span class="info-label">{t('contact.info.email')}</span>
+                <span class="info-label">{t('dental.info.email')}</span>
                 <p class="info-value">{Email}</p>
               </div>
             </div>
@@ -129,16 +119,16 @@ const t = useTranslations(lang);
                 <svg width="22" height="22" viewBox="0 0 24 24" fill="#6AAB8A"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>
               </div>
               <div class="info-text">
-                <span class="info-label">{t('contact.info.hours')}</span>
-                <p class="info-value">{t('contact.hours.weekdays')}</p>
-                <p class="info-value">{t('contact.hours.saturday')}</p>
-                <p class="info-value emergency">{t('contact.hours.sunday')}</p>
+                <span class="info-label">{t('dental.info.hours')}</span>
+                <p class="info-value">{t('dental.hours.weekdays')}</p>
+                <p class="info-value">{t('dental.hours.saturday')}</p>
+                <p class="info-value emergency">{t('dental.hours.sunday')}</p>
               </div>
             </div>
           </div>
 
           <!-- zalo CTA -->
-          <a href="https://zalo.me/84283456789" target="_blank" class="zalo-cta">
+          <a href="https://zalo.me/840971060624" target="_blank" class="zalo-cta">
             <div class="wa-icon">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><title>Zalo SVG Icon</title><path fill="currentColor" d="M12.49 10.272v-.45h1.347v6.322h-.77a.576.576 0 0 1-.577-.573v.001a3.27 3.27 0 0 1-1.938.632a3.284 3.284 0 0 1-3.284-3.282a3.284 3.284 0 0 1 3.284-3.282a3.27 3.27 0 0 1 1.937.632zM6.919 7.79v.205c0 .382-.051.694-.3 1.06l-.03.034a8 8 0 0 0-.242.285L2.024 14.8h4.895v.768a.576.576 0 0 1-.577.576H0v-.362c0-.443.11-.641.25-.847L4.858 9.23H.192V7.79zm8.551 8.354a.48.48 0 0 1-.48-.48V7.79h1.441v8.354zM20.693 9.6a3.306 3.306 0 1 1 .002 6.612a3.306 3.306 0 0 1-.002-6.612m-10.14 5.253a1.932 1.932 0 1 0 0-3.863a1.932 1.932 0 0 0 0 3.863m10.14-.003a1.945 1.945 0 1 0 0-3.89a1.945 1.945 0 0 0 0 3.89"/></svg>
             </div>
@@ -156,11 +146,11 @@ const t = useTranslations(lang);
   <section class="section map-section">
     <div class="container">
       <div class="section-header">
-        <Flag title={t('contact.map.title')}/>
-        <h2 class="section-title">{t('contact.map.title')}</h2>
+        <Flag title={t('dental.map.title')}/>
+        <h2 class="section-title">{t('dental.map.title')}</h2>
       </div>
       <div class="map-wrap">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3836.0970726171927!2d108.25610139999999!3d15.956306299999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x314211003b54e251%3A0xa6b62ac7f436044d!2zUGjDsm5nIGtow6FtIGNodXnDqm4ga2hvYSBTQw!5e0!3m2!1ses!2sus!4v1773397913002!5m2!1ses!2sus" width="100%" height="420" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3835.6936371499196!2d108.26130099999999!3d15.9773675!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x314211003221a3d5%3A0xed9e00ae4f6707e2!2sPh%C3%B2ng%20kh%C3%A1m%20Nha%20Khoa%20SC!5e0!3m2!1ses!2sus!4v1773400887016!5m2!1ses!2sus" width="100%" height="420" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </div>
   </section>
