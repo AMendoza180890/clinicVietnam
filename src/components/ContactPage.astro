@@ -2,7 +2,8 @@
  import Layout from '../layouts/Layout.astro';
 import { useTranslations } from '../i18n/translations.js';
 
-const { lang = 'vi' } = Astro.props;
+const { lang = import.meta.env.LANG } = Astro.props;
+const Email = import.meta.env.EMAIL;
 const t = useTranslations(lang);
 ---
 
@@ -115,7 +116,7 @@ const t = useTranslations(lang);
               </div>
               <div class="info-text">
                 <span class="info-label">{t('contact.info.email')}</span>
-                <p class="info-value">info@medicare-clinic.com</p>
+                <p class="info-value">{Email}</p>
               </div>
             </div>
 
@@ -133,13 +134,13 @@ const t = useTranslations(lang);
             </div>
           </div>
 
-          <!-- WhatsApp CTA -->
-          <a href="https://wa.me/84283456789" target="_blank" class="whatsapp-cta">
+          <!-- zalo CTA -->
+          <a href="https://zalo.me/84283456789" target="_blank" class="zalo-cta">
             <div class="wa-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><title>Zalo SVG Icon</title><path fill="currentColor" d="M12.49 10.272v-.45h1.347v6.322h-.77a.576.576 0 0 1-.577-.573v.001a3.27 3.27 0 0 1-1.938.632a3.284 3.284 0 0 1-3.284-3.282a3.284 3.284 0 0 1 3.284-3.282a3.27 3.27 0 0 1 1.937.632zM6.919 7.79v.205c0 .382-.051.694-.3 1.06l-.03.034a8 8 0 0 0-.242.285L2.024 14.8h4.895v.768a.576.576 0 0 1-.577.576H0v-.362c0-.443.11-.641.25-.847L4.858 9.23H.192V7.79zm8.551 8.354a.48.48 0 0 1-.48-.48V7.79h1.441v8.354zM20.693 9.6a3.306 3.306 0 1 1 .002 6.612a3.306 3.306 0 0 1-.002-6.612m-10.14 5.253a1.932 1.932 0 1 0 0-3.863a1.932 1.932 0 0 0 0 3.863m10.14-.003a1.945 1.945 0 1 0 0-3.89a1.945 1.945 0 0 0 0 3.89"/></svg>
             </div>
             <div>
-              <strong>{lang === 'vi' ? 'Nhắn tin WhatsApp' : lang === 'ko' ? 'WhatsApp 채팅' : 'Chat on WhatsApp'}</strong>
+              <strong>{lang === 'vi' ? 'Nhắn tin zalo' : lang === 'ko' ? 'zalo 채팅' : 'Chat on zalo'}</strong>
               <span>{lang === 'vi' ? 'Phản hồi nhanh 24/7' : lang === 'ko' ? '24/7 빠른 답변' : 'Quick response 24/7'}</span>
             </div>
           </a>
@@ -168,7 +169,6 @@ const t = useTranslations(lang);
       </div>
     </div>
   </section>
-
 </Layout>
 
 <style>
@@ -345,22 +345,22 @@ const t = useTranslations(lang);
     font-weight: 500;
   }
 
-  /* WHATSAPP CTA */
-  .whatsapp-cta {
+  /* zalo CTA */
+  .zalo-cta {
     display: flex;
     align-items: center;
     gap: 16px;
     padding: 18px 22px;
-    background: linear-gradient(135deg, #25D366, #1DA851);
+    background: linear-gradient(135deg, #255cd3, #1d49a8);
     border-radius: 14px;
     color: white;
     transition: all 0.25s ease;
-    box-shadow: 0 6px 20px rgba(37,211,102,0.3);
+    box-shadow: 0 6px 20px rgba(37, 127, 211, 0.3);
   }
 
-  .whatsapp-cta:hover {
+  .zalo-cta:hover {
     transform: translateY(-2px);
-    box-shadow: 0 10px 28px rgba(37,211,102,0.45);
+    box-shadow: 0 10px 28px rgba(37, 83, 211, 0.45);
   }
 
   .wa-icon {
@@ -374,7 +374,7 @@ const t = useTranslations(lang);
     flex-shrink: 0;
   }
 
-  .whatsapp-cta strong {
+  .zalo-cta strong {
     display: block;
     font-family: 'Syne', sans-serif;
     font-weight: 700;
@@ -382,7 +382,7 @@ const t = useTranslations(lang);
     margin-bottom: 2px;
   }
 
-  .whatsapp-cta span {
+  .zalo-cta span {
     font-size: 0.8rem;
     opacity: 0.85;
   }
