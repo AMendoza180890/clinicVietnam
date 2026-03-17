@@ -1,6 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { useTranslations } from '../i18n/translations.js';
+import StartSection from './StartSection.astro';
+
 
 const { lang = import.meta.env.LANG } = Astro.props;
 const t = useTranslations(lang);
@@ -55,14 +57,6 @@ const services = [
           <div class="hero-card-main">
             <div class="hero-img-wrap">
               <img src="https://images.unsplash.com/photo-1551190822-a9333d879b1f?w=500&h=600&fit=crop" alt="Doctor" />
-              <div class="hero-badge badge-1">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="#0A6E6E"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-                <span>ISO Certified</span>
-              </div>
-              <div class="hero-badge badge-2">
-                <strong>20+</strong>
-                <span>Years</span>
-              </div>
             </div>
           </div>
         </div>
@@ -71,24 +65,9 @@ const services = [
   </section>
 
   <!-- STATS SECTION -->
-  <section class="stats-section section">
-    <div class="container">
-      <div class="stats-grid">
-        {[
-          { number: '50,000+', label: t('home.stats.patients'), icon: '👥' },
-          { number: '80+', label: t('home.stats.doctors'), icon: '⚕️' },
-          { number: '20+', label: t('home.stats.years'), icon: '🏆' },
-          { number: '15+', label: t('home.stats.awards'), icon: '🥇' },
-        ].map(stat => (
-          <div class="stat-item">
-            <div class="stat-icon">{stat.icon}</div>
-            <div class="stat-number">{stat.number}</div>
-            <div class="stat-label">{stat.label}</div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
+  <StartSection>
+      <h2 class="section-title text-center text-white">Advanced healthcare with a human touch.</h2>
+  </StartSection>
 
   <!-- ABOUT SECTION -->
   <section class="section about-section">
@@ -358,40 +337,6 @@ const services = [
 
   .badge-2 strong { font-size: 1.5rem; color: var(--primary); font-weight: 800; }
   .badge-2 span { font-size: 0.75rem; color: var(--text-muted); }
-
-  /* STATS */
-  .stats-section { background: var(--primary); }
-
-  .stats-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 0;
-  }
-
-  .stat-item {
-    text-align: center;
-    padding: 48px 24px;
-    border-right: 1px solid rgba(255,255,255,0.15);
-  }
-
-  .stat-item:last-child { border-right: none; }
-
-  .stat-icon { font-size: 2rem; margin-bottom: 12px; }
-
-  .stat-number {
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 800;
-    font-size: 2.5rem;
-    color: white;
-    line-height: 1;
-    margin-bottom: 8px;
-  }
-
-  .stat-label {
-    font-size: 0.85rem;
-    color: rgba(255,255,255,0.65);
-    font-weight: 500;
-  }
 
   /* ABOUT */
   .about-section { background: white; }

@@ -1,0 +1,46 @@
+---
+
+---
+
+<section class="stats-section section">
+  <div class="container">
+        <slot />
+  </div>
+</section>
+
+
+<style>
+/* STATS */
+.stats-section { background: var(--primary); }
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 48px 24px;
+  border-right: 1px solid rgba(255,255,255,0.15);
+}
+
+.stat-item:last-child { border-right: none; }
+
+.stat-icon { font-size: 2rem; margin-bottom: 12px; }
+
+.stat-number {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 800;
+  font-size: 2.5rem;
+  color: white;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.65);
+  font-weight: 500;
+}
+</style>
