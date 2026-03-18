@@ -57,9 +57,9 @@ src/
 - **Multi-language**: Full UI translations for English, Vietnamese, Korean
 - **Language Switcher**: Navbar dropdown to switch languages seamlessly
 - **Responsive**: Mobile-first design with hamburger menu
-- **Pages**: Home, Services, Doctors (with filter), Contact (with form + map)
+- **Pages**: Home, Services, Doctors (with filter), Dental Clinic, Contact (with form + map)
 - **Footer**: Social icons (Facebook, Instagram, X, YouTube), location, phone, address, copyright
-- **WhatsApp Button**: Floating button linked to WhatsApp with pulsing animation
+- **Zalo Button**: Floating button linked to WhatsApp with pulsing animation
 - **Section Gaps**: 15px separation between all sections
 - **Smooth Scroll**: Scroll-triggered navbar style changes
 
@@ -85,13 +85,3 @@ In `src/i18n/translations.js`, update these keys:
 3. Create `src/pages/[newlang]/` directory with page files
 
 ---
-
-## 🎨 Design Tokens (CSS Variables)
-
-```css
---primary: #0A6E6E        /* Teal brand color */
---accent: #E8A020         /* Gold accent */
---section-gap: 15px       /* Gap between sections */
---radius: 12px            /* Default border radius */
---radius-lg: 20px         /* Large border radius */
-```

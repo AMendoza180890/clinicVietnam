@@ -367,7 +367,7 @@ export const ui = {
     'contact.form.submit': '메시지 보내기',
     'contact.info.title': '연락처 정보',
     'contact.info.address': '주소',
-    'contact.info.addressDental': '주소',
+    'contact.info.addressDental': 'Dental',
     'contact.info.phone': '전화',
     'contact.info.email': '이메일',
     'contact.info.hours': '진료 시간',
