@@ -2,7 +2,7 @@
 import { useTranslations } from "../i18n/translations.js";
 const { lang = "vi", title, description } = Astro.props;
 const t = useTranslations(lang);
-// const baseUrl = `${Astro.url.protocol}//${Astro.url}`;
+const baseUrl = "https://clinic-vietnam.vercel.app/logoSocialMedia.png"
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 import WhatsappButton from "../components/WhatsappButton.astro";
@@ -30,7 +30,7 @@ import WhatsappButton from "../components/WhatsappButton.astro";
 		<meta property="og:url" content={Astro.url} />
 		<meta property="og:type" content="website" />
 		<meta property="og:title" content={title} />
-		<meta property="og:image" content=`${Astro.url}/logoSocialMedia.png` />
+		<meta property="og:image" content={baseUrl} />
 		<meta property="og:image:alt" content="Phong Khanm SC" />
 		<meta property="og:description" content={description} />
 		<meta property="og:site_name" content="Phong Khanm SC" />
@@ -41,7 +41,7 @@ import WhatsappButton from "../components/WhatsappButton.astro";
 		<meta name="twitter:url" content={Astro.url} />
 		<meta name="twitter:title" content={title} />
 		<meta name="twitter:description" content={description} />
-		<meta name="twitter:image" content=`${Astro.url}/logoSocialMedia.png` />
+		<meta name="twitter:image" content={baseUrl} />
 
   </head>
   <body>
