@@ -136,6 +136,11 @@ export const ui = {
     'dental.hours.weekdays': 'Monday – Friday: 8:00 AM – 8:00 PM',
     'dental.hours.saturday': 'Saturday: 9:00 AM – 5:00 PM',
     'dental.hours.sunday': 'Sunday: Emergency Only',
+    'dental.about.p1': 'MediCare Clinic has been serving the community for over 20 years, offering comprehensive medical services with a patient-first approach.',
+    'dental.about.p2': 'Our state-of-the-art facility is equipped with the latest medical technology, ensuring accurate diagnoses and effective treatments.',
+    'dental.about.feature1': 'Accredited International Standards',
+    'dental.about.feature2': '24/7 Emergency Services',
+    'dental.about.feature3': 'Multilingual Medical Staff',
 
     // Footer
     'footer.tagline': 'Advanced healthcare with a human touch.',
@@ -274,6 +279,11 @@ export const ui = {
     'dental.hours.weekdays': 'Thứ Hai – Thứ Sáu: 8:00 – 20:00',
     'dental.hours.saturday': 'Thứ Bảy: 9:00 – 17:00',
     'dental.hours.sunday': 'Chủ Nhật: Chỉ Cấp Cứu',
+    'dental.about.p1': 'MediCare Clinic has been serving the community for over 20 years, offering comprehensive medical services with a patient-first approach.',
+    'dental.about.p2': 'Our state-of-the-art facility is equipped with the latest medical technology, ensuring accurate diagnoses and effective treatments.',
+    'dental.about.feature1': 'Accredited International Standards',
+    'dental.about.feature2': '24/7 Emergency Services',
+    'dental.about.feature3': 'Multilingual Medical Staff',
 
     'footer.tagline': 'Chăm sóc sức khỏe tiên tiến với tấm lòng nhân ái.',
     'footer.quick': 'Liên Kết Nhanh',
@@ -410,6 +420,11 @@ export const ui = {
     'dental.hours.weekdays': '월요일 – 금요일: 오전 8시 – 오후 8시',
     'dental.hours.saturday': '토요일: 오전 9시 – 오후 5시',
     'dental.hours.sunday': '일요일: 응급만 가능',
+    'dental.about.p1': 'MediCare Clinic has been serving the community for over 20 years, offering comprehensive medical services with a patient-first approach.',
+    'dental.about.p2': 'Our state-of-the-art facility is equipped with the latest medical technology, ensuring accurate diagnoses and effective treatments.',
+    'dental.about.feature1': 'Accredited International Standards',
+    'dental.about.feature2': '24/7 Emergency Services',
+    'dental.about.feature3': 'Multilingual Medical Staff',
 
     'footer.tagline': '인간적인 감성을 담은 첨단 의료 서비스.',
     'footer.quick': '빠른 링크',
