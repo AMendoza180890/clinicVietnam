@@ -2,6 +2,9 @@
 import Layout from '../layouts/Layout.astro';
 import { useTranslations } from '../i18n/translations.js';
 import StartSection from './StartSection.astro';
+import { Image } from 'astro:assets';
+import HeaderPic from '../assets/image/img6.JPG';
+import Clinic from '../assets/image/img14.JPG';
 
 
 const { lang = import.meta.env.LANG } = Astro.props;
@@ -56,7 +59,7 @@ const services = [
         <div class="hero-visual">
           <div class="hero-card-main">
             <div class="hero-img-wrap">
-              <img src="/src/assets/image/img6.JPG" alt="Doctor" />
+              <Image src={HeaderPic} alt="Doctor" />
             </div>
           </div>
         </div>
@@ -75,7 +78,7 @@ const services = [
       <div class="about-grid">
         <div class="about-img-col">
           <div class="about-img-wrap">
-            <img src="/src/assets/image/img14.JPG" class="object-cover object-top" alt="Clinic" />
+            <Image src={Clinic} class="object-cover object-top" alt="Clinic" />
             <div class="about-img-card">
               <div class="aic-icon">🏥</div>
               <div>

@@ -1,11 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { useTranslations } from '../i18n/translations.js';
-import Hero from '../components/Hero.astro';
 import Flag from '../components/Flag.astro';
+import { Image } from 'astro:assets';
+import Doctor from '../assets/image/img8.JPG';
 
 const { lang = import.meta.env.LANG } = Astro.props;
-const Email = import.meta.env.EMAIL;
 const t = useTranslations(lang);
 ---
 
@@ -29,7 +29,7 @@ const t = useTranslations(lang);
           <div class="hero-visual">
             <div class="hero-card-main">
               <div class="hero-img-wrap">
-                <img src="/src/assets/image/img8.JPG" alt="Doctor" />
+                <Image src={Doctor} alt="Doctor" />
               </div>
             </div>
           </div>
