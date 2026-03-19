@@ -16,6 +16,7 @@ export const ui = {
     'nav.contact': 'Contact Us',
 
     // Home
+    'home.description': 'Title to describe the page',
     'home.hero.title': 'Advanced Medical Care',
     'home.hero.subtitle': 'Your Health Is Our Priority',
     'home.hero.desc': 'We provide world-class healthcare with compassion, cutting-edge technology, and a team of dedicated specialists.',
@@ -51,6 +52,7 @@ export const ui = {
     'home.cta.btn': 'Book an Appointment',
 
     // Services
+    'services.description': 'description page services',
     'services.hero.title': 'Our Medical Services',
     'services.hero.desc': 'Comprehensive healthcare solutions designed to meet all your medical needs under one roof.',
     'services.list.title': 'Specialized Departments',
@@ -79,6 +81,7 @@ export const ui = {
     'services.cta.btn': 'Contact Us Today',
 
     // Doctors
+    'doctors.decription': 'description doctors page',
     'doctors.hero.title': 'Our Medical Team',
     'doctors.hero.desc': 'Meet our team of highly qualified specialists dedicated to your health and wellbeing.',
     'doctors.filter.all': 'All',
@@ -91,6 +94,7 @@ export const ui = {
     'doctors.join.btn': 'View Careers',
 
     // Contact
+    'contact.description': 'description contact page',
     'contact.hero.title': 'Get in Touch',
     'contact.hero.desc': 'We are here to answer your questions and help you schedule your appointment.',
     'contact.form.title': 'Send Us a Message',
@@ -112,6 +116,7 @@ export const ui = {
     'contact.hours.sunday': 'Sunday: Emergency Only',
 
     // Dental
+    'dental.description': 'description dental page',
     'dental.hero.title': 'Dental Clinic Info',
     'dental.hero.desc': 'We are here to answer your questions and help you schedule your appointment.',
     'dental.form.title': 'Send Us a Message',
@@ -153,6 +158,7 @@ export const ui = {
     'nav.dental': 'Liên Hệ',
     'nav.contact': 'Liên Hệ',
 
+    'home.description': 'Title to describe the page',
     'home.hero.title': 'Chăm Sóc Y Tế Hiện Đại',
     'home.hero.subtitle': 'Sức Khỏe Của Bạn Là Ưu Tiên Hàng Đầu',
     'home.hero.desc': 'Chúng tôi cung cấp dịch vụ chăm sóc sức khỏe đẳng cấp thế giới với sự tận tâm, công nghệ tiên tiến và đội ngũ chuyên gia giàu kinh nghiệm.',
@@ -187,6 +193,7 @@ export const ui = {
     'home.cta.desc': 'Đặt lịch hẹn ngay hôm nay và trải nghiệm sự khác biệt của MediCare.',
     'home.cta.btn': 'Đặt Lịch Hẹn',
 
+    'services.description': 'description page services',
     'services.hero.title': 'Dịch Vụ Y Tế Của Chúng Tôi',
     'services.hero.desc': 'Giải pháp chăm sóc sức khỏe toàn diện được thiết kế để đáp ứng mọi nhu cầu y tế của bạn.',
     'services.list.title': 'Các Khoa Chuyên Khoa',
@@ -214,6 +221,7 @@ export const ui = {
     'services.cta.title': 'Cần Tư Vấn?',
     'services.cta.btn': 'Liên Hệ Ngay',
 
+    'doctors.decription': 'description doctors page',
     'doctors.hero.title': 'Đội Ngũ Y Tế Của Chúng Tôi',
     'doctors.hero.desc': 'Gặp gỡ đội ngũ chuyên gia có trình độ cao, tận tâm vì sức khỏe và sự an lành của bạn.',
     'doctors.filter.all': 'Tất Cả',
@@ -225,6 +233,7 @@ export const ui = {
     'doctors.join.desc': 'Chúng tôi luôn tìm kiếm các chuyên gia y tế tài năng để gia nhập đội ngũ đang phát triển.',
     'doctors.join.btn': 'Xem Cơ Hội Việc Làm',
 
+    'contact.description': 'description contact page',
     'contact.hero.title': 'Liên Hệ Với Chúng Tôi',
     'contact.hero.desc': 'Chúng tôi sẵn sàng giải đáp thắc mắc và hỗ trợ bạn đặt lịch khám.',
     'contact.form.title': 'Gửi Tin Nhắn',
@@ -246,6 +255,7 @@ export const ui = {
     'contact.hours.sunday': 'Chủ Nhật: Chỉ Cấp Cứu',
 
     //Dental
+    'dental.description': 'description dental page',
     'dental.hero.title': 'Liên Hệ Với Chúng Tôi',
     'dental.hero.desc': 'Chúng tôi sẵn sàng giải đáp thắc mắc và hỗ trợ bạn đặt lịch khám.',
     'dental.form.title': 'Gửi Tin Nhắn',
@@ -284,6 +294,7 @@ export const ui = {
     'nav.dental': '문의하기',
     'nav.contact': '문의하기',
 
+    'home.description': 'Title to describe the page',
     'home.hero.title': '첨단 의료 서비스',
     'home.hero.subtitle': '당신의 건강이 저희의 최우선입니다',
     'home.hero.desc': '헌신적인 전문가 팀과 최첨단 기술로 세계 수준의 의료 서비스를 제공합니다.',
@@ -318,6 +329,7 @@ export const ui = {
     'home.cta.desc': '오늘 예약하고 MediCare의 차별화된 서비스를 경험하세요.',
     'home.cta.btn': '예약하기',
 
+    'services.description': 'description page services',
     'services.hero.title': '저희 의료 서비스',
     'services.hero.desc': '모든 의료 필요를 충족시키기 위한 종합 의료 솔루션을 한 곳에서 제공합니다.',
     'services.list.title': '전문 진료과',
@@ -345,6 +357,7 @@ export const ui = {
     'services.cta.title': '상담이 필요하신가요?',
     'services.cta.btn': '지금 문의하기',
 
+    'doctors.decription': 'description doctors page',
     'doctors.hero.title': '저희 의료팀',
     'doctors.hero.desc': '당신의 건강과 행복을 위해 헌신하는 고도로 자격을 갖춘 전문가 팀을 만나보세요.',
     'doctors.filter.all': '전체',
@@ -356,6 +369,7 @@ export const ui = {
     'doctors.join.desc': '성장하는 팀에 합류할 재능 있는 의료 전문가를 항상 찾고 있습니다.',
     'doctors.join.btn': '채용 정보 보기',
 
+    'contact.description': 'description contact page',
     'contact.hero.title': '문의하기',
     'contact.hero.desc': '질문에 답변하고 예약을 도와드리기 위해 여기 있습니다.',
     'contact.form.title': '메시지 보내기',
@@ -377,6 +391,7 @@ export const ui = {
     'contact.hours.sunday': '일요일: 응급만 가능',
 
     //Dental
+    'dental.description': 'description dental page',
     'dental.hero.title': '문의하기',
     'dental.hero.desc': '질문에 답변하고 예약을 도와드리기 위해 여기 있습니다.',
     'dental.form.title': '메시지 보내기',

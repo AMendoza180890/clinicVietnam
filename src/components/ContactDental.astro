@@ -9,7 +9,7 @@ const Email = import.meta.env.EMAIL;
 const t = useTranslations(lang);
 ---
 
-<Layout lang={lang} title={t('nav.dental')}>
+<Layout lang={lang} title={t('nav.dental')} description={t('dental.description')}>
 
   <!-- HERO -->
   <Hero tag={t('nav.dental')} title={t('dental.hero.title')} description={t('dental.hero.desc')} />
@@ -87,7 +87,9 @@ const t = useTranslations(lang);
               </div>
               <div class="info-text">
                 <span class="info-label">{t('contact.info.address')}</span>
-                <p class="info-value">{t('footer.address')}</p>
+                <a href="https://maps.app.goo.gl/KNKcBx4pKGS7kMPC6">
+                  <p class="info-value">{t('footer.address')}</p>
+                </a>
               </div>
             </div>
 
@@ -98,7 +100,9 @@ const t = useTranslations(lang);
               </div>
               <div class="info-text">
                 <span class="info-label">{t('dental.info.phone')}</span>
-                <p class="info-value">{t('footer.phone')}</p>
+                <a href=`tel:${t('footer.phone')}`>
+                  <p class="info-value">{t('footer.phone')}</p>
+                </a>
               </div>
             </div>
 
@@ -109,7 +113,9 @@ const t = useTranslations(lang);
               </div>
               <div class="info-text">
                 <span class="info-label">{t('dental.info.email')}</span>
-                <p class="info-value">{Email}</p>
+                <a href="mailto:scnhakhoa2025@gmail.com">
+                  <p class="info-value">scnhakhoa2025@gmail.com</p>
+                </a>
               </div>
             </div>
 
