@@ -3,6 +3,8 @@ import Layout from '../layouts/Layout.astro';
 import { useTranslations } from '../i18n/translations.js';
 import Hero from '../components/Hero.astro';
 import Flag from '../components/Flag.astro';
+import { Image } from 'astro:assets';
+import Doctor from '../assets/image/img2.JPG';
 
 const { lang = 'en' } = Astro.props;
 const t = useTranslations(lang);
@@ -104,7 +106,7 @@ const processSteps = [
           </div>
         </div>
         <div class="why-visual">
-          <img src="/src/assets/image/img2.JPG" alt="Medical Equipment" />
+          <Image src={Doctor} alt="Medical Equipment" />
         </div>
       </div>
     </div>
