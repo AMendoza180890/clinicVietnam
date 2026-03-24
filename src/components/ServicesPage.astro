@@ -10,12 +10,9 @@ const { lang = 'en' } = Astro.props;
 const t = useTranslations(lang);
 
 const services = [
-  { key: 'cardiology', icon: '🫀', color: '#FF6B6B', bg: '#FF6B6B15' },
-  { key: 'neurology', icon: '🧠', color: '#4ECDC4', bg: '#4ECDC415' },
+  { key: 'internalmedicine', icon: '🏥', color: '#FF6B6B', bg: '#FF6B6B15' },
   { key: 'pediatrics', icon: '👶', color: '#45B7D1', bg: '#45B7D115' },
-  { key: 'orthopedics', icon: '🦴', color: '#96CEB4', bg: '#96CEB415' },
-  { key: 'dermatology', icon: '✨', color: '#FFEAA7', bg: '#FFEAA720' },
-  { key: 'oncology', icon: '🎗️', color: '#DDA0DD', bg: '#DDA0DD15' },
+  { key: 'odontology', icon: '🦷', color: '#4ECDC4', bg: '#4ECDC415' },
 ];
 
 const processSteps = [
@@ -48,7 +45,7 @@ const processSteps = [
             </div>
             <h3 class="svc-card-title">{t(`services.${svc.key}.title`)}</h3>
             <p class="svc-card-desc">{t(`services.${svc.key}.desc`)}</p>
-            <a href={`/${lang}/contact`} class="svc-card-cta">
+            <a href={t(`services.${svc.key}.title`) === "odontology"? `/${lang}/dental` :`/${lang}/contact`} class="svc-card-cta">
               {t('home.hero.cta')}
               <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
             </a>
@@ -86,7 +83,7 @@ const processSteps = [
         <div class="why-content">
           <Flag title="Why MediCare" />
           <h2 class="section-title">
-            {lang === 'vi' ? 'Tại Sao Chọn Chúng Tôi?' : lang === 'ko' ? '왜 우리를 선택해야 하나요?' : 'Why Choose MediCare?'}
+            {lang === 'vi' ? 'Tại Sao Chọn Chúng Tôi?' : lang === 'ko' ? '왜 우리를 선택해야 하나요?' : 'Why Choose Medical Clinic?'}
           </h2>
           <div class="why-items">
             {[

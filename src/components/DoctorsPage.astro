@@ -9,8 +9,8 @@ const t = useTranslations(lang);
 const doctors = [
   {
     name: 'Dr. Woo Jinho',
-    specialty: t('services.cardiology.title'),
-    dept: 'cardiology',
+    specialty: t('services.internalmedicine.title'),
+    dept: 'internalmedicine',
     education: 'Harvard Medical School',
     experience: '15 years',
     img: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&h=400&fit=crop&crop=face',
@@ -19,8 +19,8 @@ const doctors = [
   },
   {
     name: 'Dr. James Park',
-    specialty: t('services.neurology.title'),
-    dept: 'neurology',
+    specialty: t('services.internalmedicine.title'),
+    dept: 'internalmedicine',
     education: 'Johns Hopkins University',
     experience: '18 years',
     img: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&h=400&fit=crop&crop=face',
@@ -39,8 +39,8 @@ const doctors = [
   },
   {
     name: 'Dr. Michael Torres',
-    specialty: t('services.orthopedics.title'),
-    dept: 'orthopedics',
+    specialty: t('services.pediatrics.title'),
+    dept: 'pediatrics',
     education: 'Stanford University',
     experience: '20 years',
     img: 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=400&h=400&fit=crop&crop=face',
@@ -49,8 +49,8 @@ const doctors = [
   },
   {
     name: 'Dr. Ji-Young Kim',
-    specialty: t('services.cardiology.title'),
-    dept: 'cardiology',
+    specialty: t('services.odontology.title'),
+    dept: 'odontology',
     education: 'Seoul National University',
     experience: '14 years',
     img: 'https://images.unsplash.com/photo-1651008376811-b90baee60c1f?w=400&h=400&fit=crop&crop=face',
@@ -59,8 +59,8 @@ const doctors = [
   },
   {
     name: 'Dr. Anh Tran',
-    specialty: t('services.neurology.title'),
-    dept: 'neurology',
+    specialty: t('services.odontology.title'),
+    dept: 'odontology',
     education: 'Paris Descartes University',
     experience: '10 years',
     img: 'https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=400&h=400&fit=crop&crop=face',
@@ -80,7 +80,7 @@ const doctors = [
     <div class="container">
       <!-- Filter Tabs -->
       <div class="filter-tabs" id="filterTabs">
-        {['all', 'cardiology', 'neurology', 'pediatrics', 'orthopedics'].map(f => (
+        {['all', 'internalmedicine', 'pediatrics', 'odontology'].map(f => (
           <button
             class={`filter-btn ${f === 'all' ? 'active' : ''}`}
             data-filter={f}
@@ -130,20 +130,7 @@ const doctors = [
   <!-- STATS SECTION -->
   <section class="section team-stats-section">
     <div class="container">
-      <div class="team-stats">
-        {[
-          { icon: '👩‍⚕️', num: '80+', label: lang === 'vi' ? 'Bác Sĩ Chuyên Khoa' : lang === 'ko' ? '전문 의사' : 'Specialist Doctors' },
-          { icon: '🎓', num: '15+', label: lang === 'vi' ? 'Quốc Tịch' : lang === 'ko' ? '국적' : 'Nationalities' },
-          { icon: '🏅', num: '95%', label: lang === 'vi' ? 'Hài Lòng Bệnh Nhân' : lang === 'ko' ? '환자 만족도' : 'Patient Satisfaction' },
-          { icon: '🌏', num: '12+', label: lang === 'vi' ? 'Chuyên Khoa' : lang === 'ko' ? '전문 분야' : 'Specialties' },
-        ].map(s => (
-          <div class="ts-item">
-            <div class="ts-icon">{s.icon}</div>
-            <div class="ts-num">{s.num}</div>
-            <div class="ts-label">{s.label}</div>
-          </div>
-        ))}
-      </div>
+        <h2 class="section-title text-center text-white">Advanced healthcare with a human touch.</h2>
     </div>
   </section>
 
