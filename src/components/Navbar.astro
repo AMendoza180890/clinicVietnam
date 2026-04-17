@@ -8,7 +8,6 @@ const navLinks = [
   { key: 'nav.home', href: `/${lang}/` },
   { key: 'nav.services', href: `/${lang}/services` },
   { key: 'nav.doctors', href: `/${lang}/doctors` },
-  { key: 'nav.dental', href: `/${lang}/dental` },
   { key: 'nav.contact', href: `/${lang}/contact` },
 ];
 
@@ -22,9 +21,9 @@ const currentPath = Astro.url.pathname;
         <!-- Logo --> 
         <a href={`/${lang}/`} class="nav-logo">
           <div class="logo-icon">
-            <Image src={Logo} alt="Phong Kham SC" />
+            <Image src={Logo} alt="Phòng Khám Đa Khoa SC" />
           </div>
-          <div class="logo-text">Phong<span>Kham</span></div>
+          <div class="logo-text">Phòng Khám <span>Đa Khoa SC</span></div>
         </a>
   
         <!-- Nav Links -->
