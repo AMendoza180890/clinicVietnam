@@ -1,0 +1,6 @@
+allowBuilds:
+  esbuild: false
+  sharp: false
+
+overrides:
+  devalue: "5.8.1"
