@@ -4,7 +4,7 @@ import { useTranslations } from '../i18n/translations.js';
 import Hero from '../components/Hero.astro';
 import Flag from '../components/Flag.astro';
 
-const { lang = import.meta.env.LANG } = Astro.props;
+const { lang = "vi" } = Astro.props;
 const Email = import.meta.env.EMAIL;
 const t = useTranslations(lang);
 ---
